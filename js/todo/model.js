@@ -52,7 +52,7 @@ export default class Model {
         } else {
             task.status = 'active';
         }
-        
+
         this.saveToLocalStorage();
 	}
 

@@ -12,7 +12,7 @@ view.elements.form.addEventListener('submit', function (e) {
     view.clearInput();
 })
 
-// 2. Нажали на Чек
+// 2. Нажали на Чекбокс или кнопку Удалить
 view.elements.tasksList.addEventListener('click', function (e) {
 
 	// Проверяем клик "по чекбоксу"
@@ -21,5 +21,15 @@ view.elements.tasksList.addEventListener('click', function (e) {
         const task = model.findTask(id);
         model.changeStatus(task);
         view.changeStatus(task);
-	}
+    }
+
+    // Клик по кнопке Удалить
+    if (e.target.hasAttribute('data-delete')) {
+        const id = e.target.closest('.todo-item').dataset.id;
+        const task = model.findTask(id);
+        model.removeTask(task);
+        view.removeTask(task);
+    }
+
+
 })
