@@ -1,16 +1,13 @@
 import Model from './model.js';
-const model = new Model();
+import View from './view.js';
 
+const model = new Model();
+const view = new View();
 
 model.addTask('Заверстать стартовый шаблон');
 model.addTask('Написать скрипт');
 model.addTask('Записать урок');
-// console.log(model);
-
-// model.doneTask(model.tasks[1]);
-// console.log(model);
-
-model.removeTask(model.tasks[0]);
 console.log(model);
-
 model.saveToLocalStorage();
+
+view.renderTask(model.tasks[2]);
