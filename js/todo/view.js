@@ -11,11 +11,15 @@ export default class View {
 		tasksList: document.getElementById('tasksList'),
 	};
 
-	renderTask(taskObject) {
+    renderTask(taskObject) {
+
+        const completeClass = taskObject.status === 'done' ? 'completed' : '';
+        const checked = taskObject.status === 'done' ? 'checked' : '';
+
 		const taskHTML = `  <li class="todo-item">
                                 <label class="todo-item-label">
-                                    <input class="checkbox" type="checkbox" />
-                                    <span>${taskObject.text}</span>
+                                    <input class="checkbox" type="checkbox" ${checked} />
+                                    <span class="${completeClass}">${taskObject.text}</span>
                                     <button class="btn btn-secondary btn-sm">Удалить</button>
                                 </label>
                             </li>`;
