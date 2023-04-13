@@ -4,18 +4,24 @@ export default class Model {
 	}
 
 	addTask(text) {
-
-        const newTask = {
+		const newTask = {
 			status: 'active',
 			text: text,
-        };
+		};
 
-        this.tasks.push(newTask);
-
+		this.tasks.push(newTask);
 	}
 
-    doneTask(task) {
-        task.status = 'done';
+	doneTask(task) {
+		task.status = 'done';
+	}
+
+    removeTask(task) {
+        const index = this.tasks.indexOf(task);
+        console.log(index);
+
+        this.tasks.splice(index, 1);
+
     }
 }
 
