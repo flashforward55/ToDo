@@ -45,8 +45,14 @@ export default class Model {
         return task;
     }
 
-	doneTask(task) {
-        task.status = 'done';
+    changeStatus(task) {
+
+        if (task.status === 'active') {
+            task.status = 'done';
+        } else {
+            task.status = 'active';
+        }
+        
         this.saveToLocalStorage();
 	}
 
