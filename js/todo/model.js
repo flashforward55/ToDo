@@ -24,6 +24,8 @@ export default class Model {
 
         this.tasks.push(newTask);
         this.saveToLocalStorage();
+
+        return newTask;
 	}
 
 	doneTask(task) {

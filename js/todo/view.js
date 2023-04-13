@@ -1,9 +1,9 @@
 export default class View {
-    constructor(tasks) {
-        tasks.forEach((task) => {
-            this.renderTask(task);
-        });
-    }
+	constructor(tasks) {
+		tasks.forEach((task) => {
+			this.renderTask(task);
+		});
+	}
 
 	elements = {
 		input: document.getElementById('newTask'),
@@ -11,10 +11,9 @@ export default class View {
 		tasksList: document.getElementById('tasksList'),
 	};
 
-    renderTask(taskObject) {
-
-        const completeClass = taskObject.status === 'done' ? 'completed' : '';
-        const checked = taskObject.status === 'done' ? 'checked' : '';
+	renderTask(taskObject) {
+		const completeClass = taskObject.status === 'done' ? 'completed' : '';
+		const checked = taskObject.status === 'done' ? 'checked' : '';
 
 		const taskHTML = `  <li class="todo-item">
                                 <label class="todo-item-label">
@@ -23,6 +22,10 @@ export default class View {
                                     <button class="btn btn-secondary btn-sm">Удалить</button>
                                 </label>
                             </li>`;
-        this.elements.tasksList.insertAdjacentHTML('beforeend', taskHTML);
+		this.elements.tasksList.insertAdjacentHTML('beforeend', taskHTML);
+	}
+
+	clearInput() {
+		this.elements.input.value = '';
 	}
 }
