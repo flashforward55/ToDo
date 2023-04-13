@@ -1,11 +1,30 @@
 export default class Model {
-    constructor () {
-        this.tasks = [];
-    }
+	constructor() {
+		this.tasks = [];
+	}
 
-    addTask(text) {
-        this.tasks.push(text);
+	addTask(text) {
+
+        const newTask = {
+			status: 'active',
+			text: text,
+        };
+
+        this.tasks.push(newTask);
+
+	}
+
+    doneTask(task) {
+        task.status = 'done';
     }
 }
 
 // tasks = ['Заверстать стартовый шаблон', 'Написать скрипт', 'Записать урок', '465465464'];
+// tasks = [
+//     {
+//         status: 'active',
+// 		text: 'Заверстать стартовый шаблон',
+// 	},
+// 	{},
+// 	{},
+// ];
