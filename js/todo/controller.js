@@ -12,3 +12,5 @@ model.addTask('Записать урок');
 
 model.removeTask(model.tasks[0]);
 console.log(model);
+
+model.saveToLocalStorage();
