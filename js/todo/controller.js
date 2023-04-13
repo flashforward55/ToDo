@@ -14,10 +14,10 @@ view.elements.form.addEventListener('submit', function (e) {
 
 // 2. Нажали на Чек
 view.elements.tasksList.addEventListener('click', function (e) {
-	console.log(e.target);
 
 	// Проверяем клик "по чекбоксу"
     if (e.target.getAttribute('type') === 'checkbox') {
-        
+        const id = e.target.closest('.todo-item').dataset.id;
+        console.log(id);
 	}
 })
